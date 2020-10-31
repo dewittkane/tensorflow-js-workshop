@@ -21,6 +21,18 @@ $(document).ready(async function() {
         $('#start-button').hide();
         init();
     });
+
+    $('#classifier-form').submit(function(event) {
+        event.preventDefault();
+        $.ajax({
+            url: '/tensorflow',
+            type: 'POST',
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+        })
+
+    });
 });
 
 // Load the image model and setup the webcam
