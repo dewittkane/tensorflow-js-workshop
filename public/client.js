@@ -6,8 +6,10 @@ const URL = './drinking-model/';
 
 let model, webcam, labelContainer, maxPredictions;
 const flip = true; // whether to flip the webcam
+let mobilenetModel;
 
 $(document).ready(async function() {
+    mobilenetModel = await mobilenet.load();
     const modelURL = URL + 'model.json';
     const metadataURL = URL + 'metadata.json';
     // load the model and metadata
@@ -24,18 +26,23 @@ $(document).ready(async function() {
 
     $('#classifier-form').submit(function(event) {
         event.preventDefault();
-        $.ajax({
-            url: '/tensorflow',
-            type: 'POST',
-            data: new FormData(this),
-            processData: false,
-            contentType: false,
-        })
+        console.log(this);
+        
+        
+        //for server side
+        // $.ajax({
+        //     url: '/tensorflow',
+        //     type: 'POST',
+        //     data: new FormData(this),
+        //     processData: false,
+        //     contentType: false,
+        // })
+    
 
+    
     });
 });
 
-// Load the image model and setup the webcam
 async function init() {
     // Convenience function to setup a webcam
     webcam = new tmImage.Webcam(400, 300, flip); // width, height, flip
