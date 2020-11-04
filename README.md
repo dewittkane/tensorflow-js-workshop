@@ -1,5 +1,9 @@
 # Tensorflow.js Workshop
 
+## Takeaways
+
+This workshop was a great opportunity to delve into the world of ML.  I was able to use Google's Teachable Machine to create a different model that detects if the person in front of the webcam is drinking coffee, water, or nothing.  I really appreciate the Applied AI community in Minneapolis for sharing these resources and hosting the workshop.
+
 **TensorFlow is an end-to-end open source platform for machine learning.** [https://www.tensorflow.org/](https://www.tensorflow.org/)
 
 In this workshop, we will use *supervised learning* to build a model that can be used for image classification. TensorFlow supports a variety of different input types, we will be using images to build our model. After creating a model, we will be able to pass in data and get results with confidence levels.
